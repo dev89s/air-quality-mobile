@@ -25,3 +25,20 @@ code {
     'Courier New',
     monospace;
 }
+
+/* ---- Navigation ---- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.page-title {
+  width: 100%;
+  text-align: center;
+}
