@@ -7,7 +7,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    loader: cityName,
     children: [
       { index: true, element: <Navigate to="/home" /> },
       {

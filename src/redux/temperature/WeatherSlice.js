@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchWeather } from './fetchWeather';
+import compare from './sortCity';
 
 export const fetchWeatherByCity = createAsyncThunk(
   'weather/fetchByCityt',
@@ -40,12 +41,9 @@ export const tempSlice = createSlice({
         temp: main.temp,
         weather: weather[0],
       };
-      console.log(data);
       state.weatherList = [...state.weatherList, data];
+      state.weatherList.sort(compare);
       state.error = false;
-    }).addCase(fetchWeatherByCity.pending, (state) => {
-      state.error = false;
-      state.listState = 'loading';
     });
   },
 });

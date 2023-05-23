@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation, useLoaderData } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import backIcon from '../assets/back.png';
 
 function Navigation() {
-  const { cityName } = useLoaderData();
   const location = useLocation();
   const [path, setPath] = useState();
   useEffect(() => {
     if (location.pathname === '/home') {
       setPath('Home Page');
     } else {
-      setPath(`${cityName.charAt(0).toUpperCase()}${cityName.slice(1)}`);
+      let path = location.pathname.split('/')[2];
+      path = path.split('-').join(' ');
+      console.log(path);
+      setPath(path);
     }
   }, [location.pathname]);
 
