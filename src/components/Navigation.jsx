@@ -11,7 +11,6 @@ function Navigation() {
     } else {
       let path = location.pathname.split('/')[2];
       path = path.split('-').join(' ');
-      console.log(path);
       setPath(path);
     }
   }, [location.pathname]);
@@ -19,9 +18,12 @@ function Navigation() {
   return (
     <div className="navbar">
       <div className="nav-items">
-        <NavLink to="/home">
-          <img src={backIcon} alt="" aria-label="back" width="30px" />
-        </NavLink>
+        {location.pathname !== '/home'
+          && (
+            <NavLink to="/home">
+              <img src={backIcon} alt="" aria-label="back" width="30px" />
+            </NavLink>
+          )}
       </div>
       <h1 className="page-title">{path}</h1>
     </div>

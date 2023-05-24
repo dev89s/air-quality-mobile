@@ -1,16 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchWeather } from './fetchWeather';
+import { fetchWeather } from '../fetchWeather';
 import compare from './sortCity';
 
 export const fetchWeatherByCity = createAsyncThunk(
   'weather/fetchByCityt',
   async (city, thunkAPI) => {
-    const response = await fetchWeather(city);
-    if (response.ok) {
-      const data = await response.json();
-      return thunkAPI.fulfillWithValue(data);
+    try {
+      const response = await fetchWeather(city);
+      if (response.ok) {
+        const data = await response.json();
+        return thunkAPI.fulfillWithValue(data);
+      }
+      return thunkAPI.rejectWithValue(`Error: HTTP code:, ${response.status} ${response.statusText}`);
+    } catch (err) {
+      throw thunkAPI.rejectWithValue(err);
     }
-    return thunkAPI.rejectWithValue('Error: HTTP code:', response.status);
   },
 );
 
@@ -31,7 +35,6 @@ export const tempSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchWeatherByCity.fulfilled, (state, action) => {
       const { payload } = action;
-      // console.log(payload);
       const {
         id, main, name, weather,
       } = payload;
@@ -44,6 +47,12 @@ export const tempSlice = createSlice({
       state.weatherList = [...state.weatherList, data];
       state.weatherList.sort(compare);
       state.error = false;
+      state.listState = 'loaded';
+    }).addCase(fetchWeatherByCity.pending, (state) => {
+      state.listState = 'loading';
+    }).addCase(fetchWeatherByCity.rejected, (state, action) => {
+      const { payload } = action;
+      state.error = payload;
     });
   },
 });
