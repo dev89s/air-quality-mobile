@@ -3,7 +3,7 @@
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
     <br>
-  <h1 style="font-size: 35px; color: lightblue"><b>Air Quality Mobile WebApp</b></h1>
+  <h1 style="font-size: 35px; color: lightblue"><b>Weather and Air Quality</b></h1>
 
 </div>
 
@@ -13,7 +13,7 @@
 # 📗 Table of Contents <a id="table-of-contents"></a>
 
 - [� Table of Contents](#table-of-contents)
-- [📖 Air Quality Mobile WebApp ](#about-project)
+- [📖 Weather and Air Quality ](#about-project)
 - [🛠 Built With ](#built-with)
   - [Tech Stack ](#tech-stack)
   - [Key Features ](#key-features)
@@ -36,9 +36,9 @@
 <br>
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Air Quality Mobile WebApp <a id="about-project"></a>
+# 📖 Weather and Air Quality <a id="about-project"></a>
 
-**Air Quality Mobile WebApp** is a Single Page App (SPA) implemeted using React and Redux that has 2 pages:
+**Weather and Air Quality** is a Single Page App (SPA) implemeted using React and Redux that has 2 pages:
 1. The Cities page/Home page which displays a list of all available Cities. Users can see the temperature of each city on the homepage in each cities card.
 2. The Details/Air quality page that displays a list of air quality measures along with the quality verification (Good/Fair/Moderate/Poor/Very Poor).
 3. It uses an OpenWeather API to fetch data.
