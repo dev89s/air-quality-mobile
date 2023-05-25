@@ -3,7 +3,7 @@ import City, { cityName } from './components/City';
 import HomePage from './components/HomePage';
 import Root from './routes/Root';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,

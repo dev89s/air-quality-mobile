@@ -23,7 +23,11 @@ function Navigation() {
             <img src={backIcon} alt="" aria-label="back" height="40px" />
           </NavLink>
         )}
-      <h1 className="page-title">{path}</h1>
+      <h1 className="page-title">
+        {location.pathname !== '/home'
+          && 'City/'}
+        {path}
+      </h1>
       {location.pathname !== '/home'
         && (
           <NavLink className="nav-arrow-hidden" to="/home">

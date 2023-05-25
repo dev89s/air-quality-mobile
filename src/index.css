@@ -237,13 +237,15 @@ code {
   color: #fff;
 }
 
+.air-quality-header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .air-quality-header h3 {
   margin: 0;
   padding-bottom: 5px;
-}
-
-.air-quality-index {
-  padding-right: 80px;
 }
 
 .air-quality-list-header {
