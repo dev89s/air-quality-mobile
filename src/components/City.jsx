@@ -86,12 +86,15 @@ function City() {
     <div className="city-details">
       <div className={`bg-${city.toLowerCase().split(' ').join('-')}`}>
         <div className="air-quality-header">
-          <h3>
-            General Air Quality Index:
-          </h3>
-          <h3 className="air-quality-index">
-            {airQuality.aqi} ({airQualityIndex})
-          </h3>
+          <div className="air-quality-header-left">
+            <h2 className="city-page-city-name">{city}</h2>
+            <h3>
+              General Air Quality Index:
+            </h3>
+            <h3 className="air-quality-index">
+              {airQuality.aqi} ({airQualityIndex})
+            </h3>
+          </div>
         </div>
       </div>
       <ul className="air-quality-list">
@@ -102,23 +105,23 @@ function City() {
         </li>
         <li className="light">
           <span>NO<sub>2</sub> (Nitrogen monoxide)</span>
-          <spapn>{no2} µg/m<sup>3</sup> ({no2Quality})</spapn>
+          <span>{no2} µg/m<sup>3</sup> ({no2Quality})</span>
         </li>
         <li className="dark">
           <span>O<sub>3</sub> (Ozone)</span>
-          <spapn>{o3} µg/m<sup>3</sup> ({o3Quality})</spapn>
+          <span>{o3} µg/m<sup>3</sup> ({o3Quality})</span>
         </li>
         <li className="light">
           <span>PM<sub>2.5</sub> (Fine particles matter)</span>
-          <spapn>{pm2_5} µg/m<sup>3</sup> ({pm2_5Quality})</spapn>
+          <span>{pm2_5} µg/m<sup>3</sup> ({pm2_5Quality})</span>
         </li>
         <li className="dark">
           <span>PM<sub>10</sub> (Coarse particles matter)</span>
-          <spapn>{pm10} µg/m<sup>3</sup> ({pm10Quality})</spapn>
+          <span>{pm10} µg/m<sup>3</sup> ({pm10Quality})</span>
         </li>
         <li className="light">
           <span>SO<sub>2</sub> (Sulphur dioxide)</span>
-          <spapn>{so2} µg/m<sup>3</sup> ({so2Quality})</spapn>
+          <span>{so2} µg/m<sup>3</sup> ({so2Quality})</span>
         </li>
       </ul>
     </div>

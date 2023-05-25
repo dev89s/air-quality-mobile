@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test stays the same 1`] = `
+<section
+  className="home-page"
+>
+  <ul
+    className="weather-list"
+  />
+</section>
+`;

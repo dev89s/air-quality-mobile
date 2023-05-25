@@ -31,7 +31,7 @@ function HomePage() {
 
   if (listState === 'loading') {
     return (
-      <h2>The page is loading</h2>
+      <h2>The page is loading..</h2>
     );
   }
 
@@ -65,9 +65,14 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="weather-details">
-                  <div className="city-name">{city.name}</div>
+                  <div
+                    className="city-name"
+                    data-testid="city-name"
+                  >
+                    {city.name}
+                  </div>
                   <div className="weather-display">
-                    <span className="temperature">
+                    <span className="temperature" data-testid="temperature">
                       {city.temp}
                       {' '}
                       °C
