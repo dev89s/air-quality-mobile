@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import backIcon from '../assets/back.png';
+import backIcon from '../assets/back-arrow-white.png';
 
 function Navigation() {
   const location = useLocation();
@@ -17,15 +17,19 @@ function Navigation() {
 
   return (
     <div className="navbar">
-      <div className="nav-items">
-        {location.pathname !== '/home'
-          && (
-            <NavLink to="/home">
-              <img src={backIcon} alt="" aria-label="back" width="30px" />
-            </NavLink>
-          )}
-      </div>
+      {location.pathname !== '/home'
+        && (
+          <NavLink className="nav-arrow" to="/home">
+            <img src={backIcon} alt="" aria-label="back" height="48px" />
+          </NavLink>
+        )}
       <h1 className="page-title">{path}</h1>
+      {location.pathname !== '/home'
+        && (
+          <NavLink className="nav-arrow-hidden" to="/home">
+            <img src={backIcon} alt="" aria-label="back" width="30px" />
+          </NavLink>
+        )}
     </div>
   );
 }

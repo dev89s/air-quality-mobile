@@ -44,24 +44,31 @@ function HomePage() {
 
   return (
     <section className="home-page">
-      <h2>Home Page</h2>
       <ul className="weather-list">
-        {weatherList.map((city) => (
-          <li key={city.id}>
-            <NavLink className="weather-link" to={`/city/${city.name.split(' ').join('-')}`}>
-              {city.name}
-              :
-              {' '}
-              {city.temp}
-              {' '}
-              degrees
-              <img
-                className="weather-icon"
-                src={`https://openweathermap.org/img/wn/${city.weather.icon}.png`}
-                alt="weather-icon"
-              />
-            </NavLink>
-          </li>
+        {weatherList.map((city, index) => (
+          <div key={city.id} className={`bg-wrap bg${index + 1}`}>
+            <li className={`weather-container c${index + 1}`} key={city.id}>
+              <NavLink className="weather-link" to={`/city/${city.name.split(' ').join('-')}`}>
+                <div className="link-header">
+                  {city.name}
+                  {' '}
+
+                </div>
+                <div className="weather-display">
+                  <span className="temperature">
+                    {city.temp}
+                    {' '}
+                    °C
+                  </span>
+                  <img
+                    className="weather-icon"
+                    src={`https://openweathermap.org/img/wn/${city.weather.icon}@4x.png`}
+                    alt="weather-icon"
+                  />
+                </div>
+              </NavLink>
+            </li>
+          </div>
         ))}
       </ul>
 

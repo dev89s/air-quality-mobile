@@ -84,7 +84,6 @@ function City() {
   const city = cityName.split('-').join(' ');
   return (
     <div className="city-details">
-      <h2>{city}</h2>
       <h3>
         The general air quality measure: {airQuality.aqi} ({airQualityIndex})
       </h3>
