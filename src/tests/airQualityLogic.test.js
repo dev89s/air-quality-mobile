@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   airQualityMeasure,
   no2QualityMeasure,
@@ -5,7 +6,7 @@ import {
   o3QualityMeasure,
   pm10QualityMeasure,
   pm2_5QualityMeasure,
-  so2QualityMeasure
+  so2QualityMeasure,
 } from '../logic/airQualityLogic';
 
 describe('test airQualityMeasure functions', () => {

@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux';
 import { render, screen, waitFor } from '@testing-library/react';
-import { Navigate, RouterProvider, createMemoryRouter, } from 'react-router-dom';
+import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { act } from 'react-dom/test-utils';
 import store from '../redux/store';
 import City, { cityName } from '../components/City';
-import { act } from 'react-dom/test-utils';
 
 describe('render test', () => {
   it('renders properly', async () => {
@@ -16,14 +16,14 @@ describe('render test', () => {
     ];
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/city/New-York"]
+      initialEntries: ['/city/New-York'],
     });
 
     act(() => {
       render(
         <Provider store={store}>
           <RouterProvider router={router} />
-        </Provider>
+        </Provider>,
       );
     });
 
@@ -42,22 +42,20 @@ describe('render test', () => {
     ];
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/city/New-York"]
+      initialEntries: ['/city/New-York'],
     });
 
     act(() => {
       render(
         <Provider store={store}>
           <RouterProvider router={router} />
-        </Provider>
+        </Provider>,
       );
     });
 
     await waitFor(() => {
       const NitrogenMooixide = screen.getByText(/Nitrogen monoxide/i);
       expect(NitrogenMooixide).toBeInTheDocument();
-    })
+    });
   });
 });
-
-

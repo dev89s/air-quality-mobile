@@ -11,7 +11,7 @@ describe('rendering test', () => {
         <MemoryRouter initialEntries={[{ pathname: '/home' }]}>
           <HomePage />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
     const cityList = [
       'Amsterdam',
@@ -26,9 +26,7 @@ describe('rendering test', () => {
       const cityNames = screen.getAllByTestId('city-name');
       cityNames.forEach((cityEl) => {
         expect(cityList.includes(cityEl.textContent)).toBeTruthy();
-      })
+      });
     });
   });
 });
-
-

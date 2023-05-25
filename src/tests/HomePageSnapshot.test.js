@@ -11,7 +11,7 @@ describe('snapshot test', () => {
         <MemoryRouter initialEntries={[{ pathname: '/home' }]}>
           <HomePage />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
     const tree = homePage.toJSON();
     expect(tree).toMatchSnapshot();

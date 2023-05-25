@@ -8,7 +8,7 @@ describe('Navbar header test', () => {
     render(
       <MemoryRouter initialEntries={[{ pathname: '/home' }]}>
         <Navigation />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     const title = screen.queryByRole('heading');
     expect(title.textContent).toBe('Current Weather');
@@ -18,7 +18,7 @@ describe('Navbar header test', () => {
     render(
       <MemoryRouter initialEntries={[{ pathname: '/city/New-York' }]}>
         <Navigation />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     const title = screen.queryByRole('heading');
     expect(title.textContent).toBe('City/New York');
@@ -30,7 +30,7 @@ describe('Navbar header test', () => {
     const nav = renderer.create(
       <MemoryRouter initialEntries={[{ pathname: '/home' }]}>
         <Navigation />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     const tree = nav.toJSON();
     expect(tree).toMatchSnapshot();
