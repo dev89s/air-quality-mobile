@@ -1,7 +1,7 @@
 const key = '200b81371c37c6e6a47806d105718544';
 
 const fetchLocation = async (city) => {
-  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${key}`;
+  const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${key}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -31,7 +31,7 @@ export const fetchWeather = async (city) => {
 
 export const fetchPolution = async (city) => {
   const { lat, lon } = await fetchLocation(city);
-  const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${key}`;
+  const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${key}`;
   const response = await fetch(url);
   if (response.status === 404) {
     throw new Error(`HTTP error! The city "${city}" is not found!`);
