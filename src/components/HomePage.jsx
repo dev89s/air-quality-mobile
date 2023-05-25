@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { fetchWeatherByCity } from '../redux/temperature/WeatherSlice';
+import rightArrow from '../assets/right-arrow-incircle.svg';
 
 const cityList = [
   'Seoul',
@@ -9,6 +10,8 @@ const cityList = [
   'New-York',
   'Amsterdam',
   'London',
+  'Istanbul',
+  'Singapore',
 ];
 
 function HomePage() {
@@ -46,25 +49,35 @@ function HomePage() {
     <section className="home-page">
       <ul className="weather-list">
         {weatherList.map((city, index) => (
-          <div key={city.id} className={`bg-wrap bg${index + 1}`}>
-            <li className={`weather-container c${index + 1}`} key={city.id}>
+          <div
+            key={city.id}
+            className={`bg-wrap bg-${city.name.split(' ').join('-').toLowerCase()}`}
+          >
+            <li
+              className={`weather-container w${(index === 0) ? '-header' : (((index - 1) % 4) + 1)}`}
+              key={city.id}
+            >
               <NavLink className="weather-link" to={`/city/${city.name.split(' ').join('-')}`}>
                 <div className="link-header">
-                  {city.name}
-                  {' '}
-
+                  <div className="link-arrow-container">
+                    <span>Air Quality</span>
+                    <img src={rightArrow} alt="right arrow" width="24px" />
+                  </div>
                 </div>
-                <div className="weather-display">
-                  <span className="temperature">
-                    {city.temp}
-                    {' '}
-                    °C
-                  </span>
-                  <img
-                    className="weather-icon"
-                    src={`https://openweathermap.org/img/wn/${city.weather.icon}@4x.png`}
-                    alt="weather-icon"
-                  />
+                <div className="weather-details">
+                  <div className="city-name">{city.name}</div>
+                  <div className="weather-display">
+                    <span className="temperature">
+                      {city.temp}
+                      {' '}
+                      °C
+                    </span>
+                    <img
+                      className="weather-icon"
+                      src={`https://openweathermap.org/img/wn/${city.weather.icon}@4x.png`}
+                      alt="weather-icon"
+                    />
+                  </div>
                 </div>
               </NavLink>
             </li>

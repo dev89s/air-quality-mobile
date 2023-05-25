@@ -63,7 +63,7 @@ function City() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-      dispatch(fetchPolutionByCity(cityName.split('-').join(' ')));
+    dispatch(fetchPolutionByCity(cityName.split('-').join(' ')));
   }, [dispatch]);
 
   if (dataState === 'loading') {
@@ -84,28 +84,41 @@ function City() {
   const city = cityName.split('-').join(' ');
   return (
     <div className="city-details">
-      <h3>
-        The general air quality measure: {airQuality.aqi} ({airQualityIndex})
-      </h3>
-      <span>Concentration of diffrent particles in air:</span>
+      <div className={`bg-${city.toLowerCase().split(' ').join('-')}`}>
+        <div className="air-quality-header">
+          <h3>
+            General Air Quality Index:
+          </h3>
+          <h3 className="air-quality-index">
+            {airQuality.aqi} ({airQualityIndex})
+          </h3>
+        </div>
+      </div>
       <ul className="air-quality-list">
-        <li>
-          CO (Carbon monixide): {co} µg/m<sup>3</sup> ({coQuality})
+        <span className="air-quality-list-header">Concentration of diffrent particles in air:</span>
+        <li className="dark">
+          <span>CO (Carbon monixide)</span>
+          <span>{co} µg/m<sup>3</sup> ({coQuality})</span>
         </li>
-        <li>
-          NO<sub>2</sub> (Nitrogen monoxide): {no2} µg/m<sup>3</sup> ({no2Quality})
+        <li className="light">
+          <span>NO<sub>2</sub> (Nitrogen monoxide)</span>
+          <spapn>{no2} µg/m<sup>3</sup> ({no2Quality})</spapn>
         </li>
-        <li>
-          O<sub>3</sub> (Ozone): {o3} µg/m<sup>3</sup> ({o3Quality})
+        <li className="dark">
+          <span>O<sub>3</sub> (Ozone)</span>
+          <spapn>{o3} µg/m<sup>3</sup> ({o3Quality})</spapn>
         </li>
-        <li>
-          PM<sub>2.5</sub> (Fine particles matter): {pm2_5} µg/m<sup>3</sup> ({pm2_5Quality})
+        <li className="light">
+          <span>PM<sub>2.5</sub> (Fine particles matter)</span>
+          <spapn>{pm2_5} µg/m<sup>3</sup> ({pm2_5Quality})</spapn>
         </li>
-        <li>
-          PM<sub>10</sub> (Coarse particles matter): {pm10} µg/m<sup>3</sup> ({pm10Quality})
+        <li className="dark">
+          <span>PM<sub>10</sub> (Coarse particles matter)</span>
+          <spapn>{pm10} µg/m<sup>3</sup> ({pm10Quality})</spapn>
         </li>
-        <li>
-          SO<sub>2</sub> (Sulphur dioxide): {so2} µg/m<sup>3</sup> ({so2Quality})
+        <li className="light">
+          <span>SO<sub>2</sub> (Sulphur dioxide)</span>
+          <spapn>{so2} µg/m<sup>3</sup> ({so2Quality})</spapn>
         </li>
       </ul>
     </div>

@@ -35,7 +35,6 @@ code {
   color: #fff;
   padding: 5px;
   background-color: #4369b2;
-  border-bottom: 1px solid #fff;
 }
 
 .page-title {
@@ -72,62 +71,103 @@ code {
 
 .bg-wrap {
   width: 50%;
+  background-color: #fff;
+  transition: transform 0.05s ease-in;
 }
 
-.bg1 {
+.bg-wrap:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.bg-amsterdam {
   background-image: url(./assets/amsterdam-outline.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 10% 150%;
+  background-position: 5% 150%;
   width: 100%;
 }
 
-.bg2 {
+.bg-istanbul {
+  background-image: url(./assets/istanbul-outline.png);
+  background-size: contain;
+  background-position: 5% 0;
+  background-repeat: no-repeat;
+}
+
+.bg-london {
   background-image: url(./assets/london-outline.png);
   background-size: contain;
-  background-position: center;
+  background-position: 5%;
   background-repeat: no-repeat;
 }
 
-.bg3 {
+.bg-new-york {
   background-image: url(./assets/new-york-outline.jpg);
   background-size: contain;
-  background-position: 30%;
+  background-position: 5%;
   background-repeat: no-repeat;
 }
 
-.bg4 {
+.bg-seoul {
   background-image: url(./assets/seoul-outline.png);
   background-size: contain;
-  background-position: 20%;
+  background-position: 5%;
   background-repeat: no-repeat;
 }
 
-.bg5 {
+.bg-sydney {
   background-image: url(./assets/sydney-outline.png);
   background-size: contain;
-  background-position: 40%;
+  background-position: 5%;
   background-repeat: no-repeat;
 }
 
-.c1 {
-  background-color: rgba(64, 100, 167, 0.85);
+.bg-singapore {
+  background-image: url(./assets/singapore-outline.webp);
+  background-size: contain;
+  background-position: 5%;
+  background-repeat: no-repeat;
 }
 
-.c2 {
-  background-color: rgba(64, 100, 167, 0.8);
+.w-header {
+  background-color: rgba(60, 100, 175, 0.85);
 }
 
-.c3 {
-  background-color: rgba(64, 100, 167, 0.8);
+.w1 {
+  background-color: rgba(50, 90, 165, 0.85);
 }
 
-.c4 {
-  background-color: rgba(64, 100, 167, 0.8);
+.w2 {
+  background-color: rgba(70, 110, 185, 0.85);
 }
 
-.c5 {
-  background-color: rgba(64, 100, 167, 0.8);
+.w3 {
+  background-color: rgba(70, 110, 185, 0.85);
+}
+
+.w4 {
+  background-color: rgba(50, 90, 165, 0.85);
+}
+
+.w-header:hover {
+  background-color: rgba(70, 110, 185, 0.85);
+}
+
+.w1:hover {
+  background-color: rgba(60, 100, 175, 0.85);
+}
+
+.w2:hover {
+  background-color: rgba(80, 120, 195, 0.85);
+}
+
+.w3:hover {
+  background-color: rgba(80, 120, 195, 0.85);
+}
+
+.w4:hover {
+  background-color: rgba(60, 100, 175, 0.85);
 }
 
 .weather-link {
@@ -138,22 +178,99 @@ code {
   color: #fff;
   font-size: 20px;
   height: 220px;
-  border: 1px solid;
 }
 
 .link-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   padding-inline: 20px;
   padding-top: 20px;
+}
+
+.link-arrow-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 14px;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-end;
 }
 
 .weather-display {
   display: flex;
   align-items: center;
+}
+
+.city-name {
   align-self: flex-end;
+  font-size: 22px;
+  padding-right: 25px;
+}
+
+.temperature {
+  font-size: 16px;
 }
 
 .weather-icon {
-  width: 100px;
+  width: 50px;
   align-self: flex-end;
   padding-right: 10px;
+  padding-left: 3px;
+}
+
+/* ---- City styles ---- */
+
+.air-quality-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 200px;
+  background-color: rgb(100, 140, 200, 0.8);
+  padding: 1rem;
+  color: #fff;
+}
+
+.air-quality-header h3 {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.air-quality-index {
+  padding-right: 80px;
+}
+
+.air-quality-list-header {
+  background-color: rgb(59, 105, 183);
+  padding: 5px 20px;
+}
+
+.air-quality-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  flex-direction: column;
+}
+
+.air-quality-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.air-quality-list li.dark {
+  background-color: rgb(51, 92, 161);
+}
+
+.air-quality-list li.light {
+  background-color: rgb(104, 147, 210);
 }

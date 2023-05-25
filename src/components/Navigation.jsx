@@ -7,7 +7,7 @@ function Navigation() {
   const [path, setPath] = useState();
   useEffect(() => {
     if (location.pathname === '/home') {
-      setPath('Home Page');
+      setPath('Current Weather');
     } else {
       let path = location.pathname.split('/')[2];
       path = path.split('-').join(' ');
@@ -20,14 +20,14 @@ function Navigation() {
       {location.pathname !== '/home'
         && (
           <NavLink className="nav-arrow" to="/home">
-            <img src={backIcon} alt="" aria-label="back" height="48px" />
+            <img src={backIcon} alt="" aria-label="back" height="40px" />
           </NavLink>
         )}
       <h1 className="page-title">{path}</h1>
       {location.pathname !== '/home'
         && (
           <NavLink className="nav-arrow-hidden" to="/home">
-            <img src={backIcon} alt="" aria-label="back" width="30px" />
+            <img src={backIcon} alt="" aria-label="back" height="40px" />
           </NavLink>
         )}
     </div>
