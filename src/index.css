@@ -1,0 +1,287 @@
+body {
+  margin: 0;
+  font-family:
+    Lato,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+/* ---- Navigation ---- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 5px;
+  background-color: #4369b2;
+}
+
+.page-title {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-arrow,
+.nav-arrow-hidden {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  padding: 8px;
+}
+
+.nav-arrow-hidden {
+  visibility: hidden;
+}
+
+/* ---- weather (homepage) ---- */
+
+.weather-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.weather-background {
+  width: 50%;
+  background-size: cover;
+}
+
+.bg-wrap {
+  width: 50%;
+  background-color: #fff;
+  transition: transform 0.05s ease-in;
+}
+
+.bg-wrap:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.bg-amsterdam {
+  background-image: url(./assets/amsterdam-outline.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 5% 150%;
+  width: 100%;
+}
+
+.bg-istanbul {
+  background-image: url(./assets/istanbul-outline.png);
+  background-size: contain;
+  background-position: 5% 0;
+  background-repeat: no-repeat;
+}
+
+.bg-london {
+  background-image: url(./assets/london-outline.png);
+  background-size: contain;
+  background-position: 5%;
+  background-repeat: no-repeat;
+}
+
+.bg-new-york {
+  background-image: url(./assets/new-york-outline.jpg);
+  background-size: contain;
+  background-position: 5%;
+  background-repeat: no-repeat;
+}
+
+.bg-seoul {
+  background-image: url(./assets/seoul-outline.png);
+  background-size: contain;
+  background-position: 5%;
+  background-repeat: no-repeat;
+}
+
+.bg-sydney {
+  background-image: url(./assets/sydney-outline.png);
+  background-size: contain;
+  background-position: 5%;
+  background-repeat: no-repeat;
+}
+
+.bg-singapore {
+  background-image: url(./assets/singapore-outline.webp);
+  background-size: contain;
+  background-position: 5%;
+  background-repeat: no-repeat;
+}
+
+.w-header {
+  background-color: rgba(60, 100, 175, 0.85);
+}
+
+.w1 {
+  background-color: rgba(50, 90, 165, 0.85);
+}
+
+.w2 {
+  background-color: rgba(70, 110, 185, 0.85);
+}
+
+.w3 {
+  background-color: rgba(70, 110, 185, 0.85);
+}
+
+.w4 {
+  background-color: rgba(50, 90, 165, 0.85);
+}
+
+.w-header:hover {
+  background-color: rgba(70, 110, 185, 0.85);
+}
+
+.w1:hover {
+  background-color: rgba(60, 100, 175, 0.85);
+}
+
+.w2:hover {
+  background-color: rgba(80, 120, 195, 0.85);
+}
+
+.w3:hover {
+  background-color: rgba(80, 120, 195, 0.85);
+}
+
+.w4:hover {
+  background-color: rgba(60, 100, 175, 0.85);
+}
+
+.weather-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  height: 220px;
+}
+
+.link-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-inline: 20px;
+  padding-top: 20px;
+}
+
+.link-arrow-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 14px;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.weather-display {
+  display: flex;
+  align-items: center;
+}
+
+.city-name {
+  align-self: flex-end;
+  font-size: 22px;
+  padding-right: 25px;
+}
+
+.temperature {
+  font-size: 16px;
+}
+
+.weather-icon {
+  width: 50px;
+  align-self: flex-end;
+  padding-right: 10px;
+  padding-left: 3px;
+}
+
+/* ---- City styles ---- */
+
+.city-details {
+  background-color: rgb(100, 140, 200, 0.8);
+  min-height: calc(100vh - 78.85px);
+}
+
+.bg-wrap-details {
+  background-color: #fff;
+}
+
+.air-quality-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 200px;
+  background-color: rgb(100, 140, 200, 0.8);
+  padding: 1rem;
+  color: #fff;
+}
+
+.air-quality-header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.air-quality-header h3 {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.air-quality-list-header {
+  background-color: rgb(59, 105, 183);
+  padding: 5px 20px;
+}
+
+.air-quality-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  flex-direction: column;
+}
+
+.air-quality-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.air-quality-list li.dark {
+  background-color: rgb(51, 92, 161);
+}
+
+.air-quality-list li.light {
+  background-color: rgb(104, 147, 210);
+}
