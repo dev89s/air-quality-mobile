@@ -226,6 +226,11 @@ code {
 
 /* ---- City styles ---- */
 
+.city-details {
+  background-color: rgb(100, 140, 200, 0.8);
+  min-height: 100vh;
+}
+
 .air-quality-header {
   display: flex;
   flex-direction: column;
