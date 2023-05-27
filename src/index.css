@@ -228,7 +228,11 @@ code {
 
 .city-details {
   background-color: rgb(100, 140, 200, 0.8);
-  min-height: 100vh;
+  min-height: calc(100vh - 78.85px);
+}
+
+.bg-wrap-details {
+  background-color: #fff;
 }
 
 .air-quality-header {

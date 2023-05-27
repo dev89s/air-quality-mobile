@@ -84,7 +84,7 @@ function City() {
   const city = cityName.split('-').join(' ');
   return (
     <div className="city-details">
-      <div className={`bg-wrap bg-${city.toLowerCase().split(' ').join('-')}`}>
+      <div className={`bg-wrap-details bg-${city.toLowerCase().split(' ').join('-')}`}>
         <div className="air-quality-header">
           <div className="air-quality-header-left">
             <h2 className="city-page-city-name">{city}</h2>
